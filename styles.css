@@ -1,0 +1,632 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Viga&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
+
+@font-face {
+  font-family: 'Viga';
+  src: url('fonts/Viga-Regular.woff2') format('woff2'),
+      url('fonts/Viga-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('fonts/Inconsolata-Regular.woff2') format('woff2'),
+      url('fonts/Inconsolata-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url('images/horse-bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+}
+
+.left-bg,.right-bg{
+  background-size: auto 100% ;
+  background-repeat: no-repeat;
+}
+
+.left-bg{background-image: url('images/left-bg.png');}
+.right-bg{background-image: url('images/right-bg.png');}
+
+.mythicon-navbar{
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  padding: 1% 7.5% 1% 7.5%;
+  background-color: #161819b0;
+  z-index: 99;
+}
+
+.mythicon-navlogo{
+  width: auto;
+  height: 90%;
+}
+
+.mythicon-navlogo:hover{
+  animation: productlogo-spin 0.5s infinite alternate;
+}
+
+.mythicon-navitems{
+  width: 35%;
+  height: 100%;
+  right: 0;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mythicon-navitem{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #00b074;
+  font-family: 'Viga';
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.mythicon-navicon{
+  filter: invert(1);
+  height: 50%;
+  width: auto;
+  color: #fff;
+}
+
+.home:hover::after{ content: 'HOME';}
+.play:hover::after{ content: 'PLAY';}
+.code:hover::after{ content: 'CODE';}
+.store:hover::after{ content: 'STORE';}
+.contactus:hover::after{ content: 'CONTACT';}
+
+.mythicon-navitem:hover .mythicon-navicon{
+  transform: scale(1.1);
+  filter: invert(51%) sepia(94%) saturate(2331%) hue-rotate(126deg) brightness(90%) contrast(102%);   
+}
+
+.mythicon-wrapper{
+ width: 100%;
+ height: 100%;
+ background-color: #161819b0;
+ padding: 7.5%;
+ background-size: 40% auto;
+ background-repeat: repeat;
+ display: flex;
+}
+
+.mythicon-section{
+ width: 100%;
+ height: 100%;
+ background-color: #161819;
+ padding: 3.75%;
+ display: flex;
+ flex-direction: column;
+}
+
+.mythicon-footer{
+ width: 100%;
+ height: 10%;
+ background-color: #212327;
+ display: flex;
+ padding: 1% 7.5% 1% 7.5%;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.mythicon-footer-txt{
+  color: #fff;
+  font-family: 'Viga', sans-serif;
+  margin: 0;
+  text-align: justify;
+  font-size: 0.8em;
+  display: flex;
+}
+
+.section-row{flex-direction: row;}
+
+::-webkit-scrollbar {
+    width: 7.5px;
+  }  
+::-webkit-scrollbar-track {
+    background: #212327;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background: #00b074;
+  }
+  
+
+::-webkit-scrollbar-thumb:hover {
+    background: #019966;
+  }
+
+  .mythicon-title{
+    color: #00b074;
+    font-family: 'Viga', sans-serif;
+    margin: 0;
+    font-size: 4em;
+    display: flex;
+  }
+
+  .mythicon-quote{
+    color: #00b074;
+    font-family: 'Viga', sans-serif;
+    margin: 0;
+    font-size: 1.5em;
+    display: flex;
+    padding-top: 5%;
+  }
+
+  .mythicon-whitetext{
+    color: #fff;
+    font-family: 'Viga', sans-serif;
+    margin: 0;
+  }
+
+  .mythicon-pagedivider{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+  .div1{width: 25%;}
+  .div2{width: 50%;}
+  .div3{width: 75%;}
+
+  .mythicon-underline{
+    width: 20%;
+    height: 10px;
+    border: none;
+    background-color: #00b074;
+    margin: 0;
+  }
+
+  .mythicon-landingpage-carousel{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* transform: translateX(90%); */
+    animation: mythicon-landingpage-animation 15s ease-out infinite;
+    transition: 15s ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .mythicon-landingpage-image{
+    width: 80%;
+    height: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    filter: invert(51%) sepia(94%) saturate(2331%) hue-rotate(126deg) brightness(90%) contrast(102%);   }
+
+   @keyframes mythicon-landingpage-animation{
+      0%{
+        transform: translateX(80%);
+      }
+      25%{
+        transform: translateX(0);
+      }
+      50%{
+        transform: translateX(-80%);
+      }
+      75%{
+        transform: translateX(0);
+      }
+      100%{
+        transform: translateX(80%);
+      }
+   }
+
+   .mythicon-carouseltxt{
+    color: #00b074;
+    font-family: 'Viga', sans-serif;
+    margin: 0;
+    font-size: 2em;
+    display: flex;
+    align-self: center;
+   }
+
+   .mythicon-carouseltxt::after{
+    content:"Play.";
+    animation: mythicon-spin 7s linear alternate infinite;
+}
+
+@keyframes mythicon-spin {
+    0% { content:"Play." }
+    25%{opacity: 0;}
+    50% { content: "Learn.";opacity: 1; }
+    75%{opacity: 0;}
+    100% { content: "Code."; opacity:1;}
+  }
+
+  .mythicon-learnmore{
+    width: 45%;
+    height: 10%;
+    margin: 10% 5% 5% 2.5%;
+    background-color: #00b074;
+    color: #fff;
+    border: none;
+    font-family: 'Viga', sans-serif;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-out;
+    border: 2.5px solid #00b074;
+    text-decoration: none;
+  }
+
+  .mythicon-settingsicon{
+    filter: invert(1);
+    padding-right: 5%;
+    transform-origin: 12px;
+  }
+
+  .mythicon-learnmore:hover{
+    transform: scale(1.1);
+    background-color: transparent;
+    color: #00b074;
+  }
+
+  .mythicon-learnmore:focus{
+    outline: none;
+  }
+
+  .mythicon-learnmore:hover .mythicon-settingsicon{
+    filter: invert(51%) sepia(94%) saturate(2331%) hue-rotate(126deg) brightness(90%) contrast(102%);    animation-fill-mode: forwards;
+    animation: mythicon-rotate 2s linear infinite;
+  }
+
+  @keyframes mythicon-rotate{
+    0%{
+       transform: rotate(0deg);
+    }
+    50%{
+       transform: rotate(180deg);
+    }
+    100%{
+       transform: rotate(360deg);
+    }
+  }
+
+  .mythicon-searchbar{
+    width: 100%;
+    height: 10%;
+    background-color: #212327b0;
+    margin-top: 5%;
+    display: flex;
+    border-radius: 1em;
+    justify-content: space-between;
+    padding: 0 5% 0 5%;
+    align-items: center;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .mythicon-searchicon{
+    filter: invert(1);
+    height: 75%;
+    width: auto;
+    color: #fff;
+  }
+
+  .mythicon-searcharea{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mythicon-searchinput{
+    width: 80%;
+    height: 80%;
+    background-color: #161819;
+    border: none;
+    color: #fff;
+    font-family: 'Viga';
+    padding: 0 2% 0 2%;
+    border-radius: 1em;
+  }
+
+  .mythicon-searchinput:focus{
+    outline: none;
+  }
+
+  .mythicon-storearea{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: scroll;
+  }
+
+  .mythicon-storearea::-webkit-scrollbar{
+    height: 5px;
+  }
+
+  .mythicon-storecard{
+    position: relative;
+    width: 17.5%;
+    min-width: 17.5%;
+    margin-right: 2.5%;
+    height: 80%;
+    padding: 1.5% 0.5%;
+    background-color: #212327;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-family: 'Viga', sans-serif;
+    background-image: url('images/bg.png');
+    background-size: 200% auto;
+    background-repeat: repeat;
+    transition: 0.5s;
+  }
+
+  .mythicon-storecard:hover{
+    /* -moz-box-shadow:    inset 0 0 1 #000000; */
+    /* -webkit-box-shadow: inset 0 0 10px #000000; */
+    /* box-shadow:         inset 100px 100px 100px #000000; */
+    box-shadow: inset 0px 0px 0px 500px #eeeeee10;
+    transform: scale(1.01);
+  }
+
+  .mythicon-productimg{
+    width: 75%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+  }
+
+  .mythicon-productlogo{
+    width: auto;
+    height: 80%;
+    filter: grayscale(1);
+    transform-style: preserve-3d; 
+    animation: productlogo-spin 5s infinite alternate;
+  }
+
+  @keyframes productlogo-spin{
+    100%{
+      transform: rotate3d(0, 1, 0, 90deg);
+    }
+  }
+
+  .mythicon-pricetag{
+    font-size: 2.5em;
+    font-family: 'Viga', sans-serif;
+  }
+
+  .mythicon-carticon{
+    filter: invert(1);
+    padding-right: 5%;
+    transform-origin: 12px;
+    transition: 0.5s;
+  }
+
+  .mythicon-buy{
+    width: 80%;
+    height: 15%;
+    margin: 10% 5% 5% 2.5%;
+    background-color: #00b074;
+    color: #fff;
+    border: none;
+    font-family: 'Viga', sans-serif;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-out;
+    border: 2.5px solid #00b074;
+  }
+
+  .mythicon-buy:hover{
+    transform: scale(1.05);
+    background-color: transparent;
+    color: #00b074;
+  }
+
+  .mythicon-buy:focus{
+    outline: none;
+  }
+
+  .mythicon-buy:hover .mythicon-carticon{
+    filter: invert(51%) sepia(94%) saturate(2331%) hue-rotate(126deg) brightness(90%) contrast(102%); 
+  }
+
+  .mythicon-appstore{
+    width: auto;
+    height: 25%;
+  }
+  .mythicon-pegasus{
+    width: 40%;
+    height: auto;
+    align-self: center;
+    transition: 0.5s;
+  }
+
+  @keyframes horseanimation{
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(-5deg);
+    }
+  }
+  
+  .mythicon-pegasus:hover{
+    animation: horseanimation 0.5s alternate infinite;
+  }
+  .mythicon-appstore-screen{
+    width: 90%;
+    height: auto;
+  }
+
+  .phonescreenarea{
+    padding-top: 5%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mythicon-heading{
+    color: #fff;
+    font-family: 'Viga', sans-serif;
+    margin: 0;
+    text-align: justify;
+    font-size: 1.25em;
+    display: flex;
+    padding-top: 5%;
+  }
+
+  .author{
+    font-size: 1em;
+  }
+
+  .mythicon-forsale{
+    width: 40%;
+    font-family: 1em;
+    height: 12.5%;
+    background-color: #C02F1D;
+    color: #fff;
+    position: absolute;
+    font-family: 'Viga', sans-serif;
+    right: -10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .list{
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .mythicon-codearea{
+    width: 100%;
+    height: 50%;
+    padding: 2.5%;
+    margin: 2.5% 0 2.5% -2.5%;
+    background-color: #212327;
+    border-radius: 0.5em;
+    font-family: 'Inconsolata', monospace;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .nodelink{
+      color: #00b074;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .mythicon-doc{
+      width: 40%;
+      height: 10%;
+      margin: -5% 0% 0% 15%;
+      background-color: #00b074;
+      color: #fff;
+      border: none;
+      font-family: 'Viga', sans-serif;
+      font-size: 1.1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s ease-out;
+      border: 2.5px solid #00b074;
+    }
+
+    .mythicon-doc:hover{
+      transform: scale(1.05);
+      background-color: transparent;
+      color: #00b074;
+    }
+  
+    .mythicon-doc:focus{
+      outline: none;
+    }
+  
+    .mythicon-doc:hover .mythicon-carticon{
+      filter: invert(51%) sepia(94%) saturate(2331%) hue-rotate(126deg) brightness(90%) contrast(102%); 
+    }
+
+    .mythicon-form{
+      width: 100%;
+      height: 80%;
+      margin-top: 5%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .mythicon-contactinput{
+      width: 90%;
+      height: 12.5%;
+      background-color: #212327;
+      border: none;
+      color: #fff;
+      font-family: 'Viga';
+      padding: 2%;
+      margin-bottom: 2%;
+      transition: 0.5s;
+      box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mythicon-contactinput:focus{
+      outline: none;
+      box-shadow: inset 0 -3px 0 0 #00b074
+    }
+
+    .textarea{
+      height: 50%;
+      resize: none;
+    }
+
+    .disclaimer{
+      margin-top: 2.5%;
+      font-size: 0.75em;
+    }
+
+    .mythicon-listarea{
+      width: 100%;
+      height: 50%;
+      padding: 2.5%;
+      margin: 2.5% 0 2.5% -2.5%;
+      background-color: #212327;
+      font-family: 'Viga';
+      font-size: 0.8em;
+      box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.2);
+      }
